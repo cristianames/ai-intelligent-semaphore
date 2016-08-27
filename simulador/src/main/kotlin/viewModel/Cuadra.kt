@@ -25,17 +25,17 @@ class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
     init {
         sendingCars = timer.doOnEach { moveCarsToTheFront() }.map { this }
 
-        entryNode.horizontalOutgoingCars.subscribe { cuadraAnterior ->
-            if(cuadraAnterior.isLeft()) {
-                val cuadra = cuadraAnterior.left().get()
-                val cantidad = minimo(_incomingCarsAvailability, cuadra.outgoingCrossingByCarsAmount)
-                _incomingCarsAmount += cantidad
-                cuadra.outgoingCrossingByCarsAmount -= cantidad
-            } else if (cuadraAnterior.isRight()) {
-                val cuadra = cuadraAnterior.right().get()
-                val cantidad = minimo(_incomingCarsAvailability, cuadra.outgoingTurningCarsAmount)
-                _incomingCarsAmount += cantidad
-                cuadra.outgoingTurningCarsAmount -= cantidad
+        entryNode.horizontalOutgoingCars.subscribe { previousBlock ->
+            if(previousBlock.isLeft()) {
+                val block = previousBlock.left().get()
+                val amount = minimo(_incomingCarsAvailability, block.outgoingCrossingByCarsAmount)
+                _incomingCarsAmount += amount
+                block.outgoingCrossingByCarsAmount -= amount
+            } else if (previousBlock.isRight()) {
+                val cuadra = previousBlock.right().get()
+                val amount = minimo(_incomingCarsAvailability, cuadra.outgoingTurningCarsAmount)
+                _incomingCarsAmount += amount
+                cuadra.outgoingTurningCarsAmount -= amount
             }
         }
     }

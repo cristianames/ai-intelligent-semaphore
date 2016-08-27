@@ -15,21 +15,21 @@ class Cruce(private val _dataCruce: DataCruce,
             private val _horizontalOutgoingCars: Cuadra): ICruce {
 
     override val horizontalOutgoingCars = observable<Either<Cuadra, Cuadra>> { subscriber ->
-        _verticalIncomingCars.sendingCars.subscribe { cuadra ->
-            subscriber.onNext(Either.Right(cuadra))
+        _verticalIncomingCars.sendingCars.subscribe { block ->
+            subscriber.onNext(Either.Right(block))
         }
-        _horizontalOutgoingCars.sendingCars.subscribe { cuadra ->
-            subscriber.onNext(Either.Left(cuadra))
+        _horizontalOutgoingCars.sendingCars.subscribe { block ->
+            subscriber.onNext(Either.Left(block))
         }
     }
 
 
     override val verticalOutgoingCars: Observable<Either<Cuadra, Cuadra>> = observable<Either<Cuadra, Cuadra>> { subscriber ->
-        _verticalIncomingCars.sendingCars.subscribe { cuadra ->
-            subscriber.onNext(Either.Left(cuadra))
+        _verticalIncomingCars.sendingCars.subscribe { block ->
+            subscriber.onNext(Either.Left(block))
         }
-        _horizontalOutgoingCars.sendingCars.subscribe { cuadra ->
-            subscriber.onNext(Either.Right(cuadra))
+        _horizontalOutgoingCars.sendingCars.subscribe { block ->
+            subscriber.onNext(Either.Right(block))
         }
     }
 
