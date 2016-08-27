@@ -9,20 +9,12 @@ import rx.Observable
 
 interface ICruce {
 
-    val horizontalOutgoingCars: Observable<Either<Cuadra, Cuadra>>
+    val crossingHorizontalOutgoingCars: Observable<Cuadra>
 
-    val verticalOutgoingCars: Observable<Either<Cuadra, Cuadra>>
+    val turningHorizontalOutgoingCars: Observable<Cuadra>
+
+    val crossingVerticalOutgoingCars: Observable<Cuadra>
+
+    val turningVerticalOutgoingCars: Observable<Cuadra>
 
 }
-//
-//enum class EDecisionAutos {
-//    DOBLAN, CRUZAN;
-//
-//    var cuadra: Cuadra? = null
-//
-//    companion object {
-//        fun Doblan(cuadra: Cuadra) {
-//
-//        }
-//    }
-//}

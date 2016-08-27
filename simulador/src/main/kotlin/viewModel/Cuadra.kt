@@ -17,8 +17,8 @@ open class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
 
     protected var _incomingCarsAmount: Int = 0
         set(value) { field = minimo(_dataCuadra.capacidad / 2, value) }
-    protected val _incomingCarsAvailability = _dataCuadra.capacidad / 2 - _incomingCarsAmount
-    protected val _outgoingCarsAvailability = _dataCuadra.capacidad / 2 - outgoingCrossingByCarsAmount - outgoingTurningCarsAmount
+    protected val _incomingCarsAvailability: Int =  _dataCuadra.capacidad / 2 - _incomingCarsAmount
+    protected val _outgoingCarsAvailability: Int = _dataCuadra.capacidad / 2 - outgoingCrossingByCarsAmount - outgoingTurningCarsAmount
 
     private var timer: Observable<Int> =  observable { /*Do Something*/ }
 
