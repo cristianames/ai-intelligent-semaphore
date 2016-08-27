@@ -32,10 +32,10 @@ class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
                 _incomingCarsAmount += amount
                 block.outgoingCrossingByCarsAmount -= amount
             } else if (previousBlock.isRight()) {
-                val cuadra = previousBlock.right().get()
-                val amount = minimo(_incomingCarsAvailability, cuadra.outgoingTurningCarsAmount)
+                val block = previousBlock.right().get()
+                val amount = minimo(_incomingCarsAvailability, block.outgoingTurningCarsAmount)
                 _incomingCarsAmount += amount
-                cuadra.outgoingTurningCarsAmount -= amount
+                block.outgoingTurningCarsAmount -= amount
             }
         }
     }

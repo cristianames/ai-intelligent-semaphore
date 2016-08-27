@@ -12,25 +12,22 @@ import rx.lang.kotlin.subscriber
 
 class Cruce(private val _dataCruce: DataCruce,
             private val _verticalIncomingCars: Cuadra,
-            private val _horizontalOutgoingCars: Cuadra): ICruce {
+            private val _horizontalIncomingCars: Cuadra): ICruce {
 
-    override val horizontalOutgoingCars = observable<Either<Cuadra, Cuadra>> { subscriber ->
-        _verticalIncomingCars.sendingCars.subscribe { block ->
-            subscriber.onNext(Either.Right(block))
-        }
-        _horizontalOutgoingCars.sendingCars.subscribe { block ->
-            subscriber.onNext(Either.Left(block))
-        }
+    override val crossingHorizontalOutgoingCars = observable<Cuadra> { subscriber ->
+        _horizontalIncomingCars.sendingCars.subscribe { subscriber.onNext(it) }
     }
 
-
-    override val verticalOutgoingCars: Observable<Either<Cuadra, Cuadra>> = observable<Either<Cuadra, Cuadra>> { subscriber ->
-        _verticalIncomingCars.sendingCars.subscribe { block ->
-            subscriber.onNext(Either.Left(block))
-        }
-        _horizontalOutgoingCars.sendingCars.subscribe { block ->
-            subscriber.onNext(Either.Right(block))
-        }
+    override val turningHorizontalOutgoingCars = observable<Cuadra> { subscriber ->
+        _verticalIncomingCars.sendingCars.subscribe { subscriber.onNext(it) }
     }
 
+    override val crossingVerticalOutgoingCars = observable<Cuadra> { subscriber ->
+        _verticalIncomingCars.sendingCars.subscribe { subscriber.onNext(it) }
+    }
+
+    override val turningVerticalOutgoingCars = observable<Cuadra> { subscriber ->
+        _horizontalIncomingCars.sendingCars.subscribe { subscriber.onNext(it) }
+    }
+    
 }
