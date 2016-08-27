@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="305.0" minHeight="305.0" prefHeight="305.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visualizador.Controller">
+   <children>
+      <SplitPane dividerPositions="0.7" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="305.0" minHeight="0.0" minWidth="305.0" prefHeight="160.0" prefWidth="305.0">
+               <children>
+                  <AnchorPane fx:id="streetsPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0" />
+                        <Pane prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="0.0" />
+                        <Pane prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+                        <Pane prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
+                        <Pane prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="0.0" />
+                        <Pane prefHeight="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+                        <Pane prefHeight="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+                        <Pane prefHeight="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
+                        <Pane prefHeight="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+                        <Pane prefHeight="5.0" style="-fx-background-color: DarkGrey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="semaphores" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="43.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="43.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="43.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="193.0" AnchorPane.topAnchor="43.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="43.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="93.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="93.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="93.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="193.0" AnchorPane.topAnchor="93.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="93.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="143.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="143.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="143.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="193.0" AnchorPane.topAnchor="143.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="143.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="193.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="193.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="193.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="193.0" AnchorPane.topAnchor="193.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="193.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="243.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="243.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="243.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="193.0" AnchorPane.topAnchor="243.0" />
+                        <Circle fill="#1d00ff" radius="10.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="243.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="horizontalBlocks" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="35.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="25.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="77.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="127.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="177.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="227.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="280.0" layoutY="62.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="139.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="25.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="80.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="130.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="180.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="230.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="280.0" layoutY="112.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="87.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="25.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="80.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="130.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="180.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="230.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="280.0" layoutY="162.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="243.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="25.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="77.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="127.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="177.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="227.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="280.0" layoutY="212.0" rotate="270.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="191.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="25.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="80.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="130.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="180.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="230.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="280.0" layoutY="262.0" rotate="90.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="verticalBlocks" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="181.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="36.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="86.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="136.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="186.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="236.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="52.0" layoutY="286.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="233.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="36.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="90.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="140.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="190.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="240.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="102.0" layoutY="290.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="77.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="36.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="86.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="136.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="186.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="236.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="152.0" layoutY="286.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="129.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="36.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="90.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="140.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="190.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="240.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="202.0" layoutY="290.0" rotate="180.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="36.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                      <points>
+                                        <Double fx:value="-50.0" />
+                                        <Double fx:value="40.0" />
+                                        <Double fx:value="50.0" />
+                                        <Double fx:value="40.0" />
+                                        <Double fx:value="0.0" />
+                                        <Double fx:value="-60.0" />
+                                      </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="86.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="136.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="186.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="236.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                    <Polygon fill="#1fff3f" layoutX="252.0" layoutY="286.0" scaleX="0.1" scaleY="0.3" stroke="BLACK" strokeMiterLimit="1.0" strokeType="OUTSIDE">
+                                       <points>
+                                          <Double fx:value="-50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="50.0" />
+                                          <Double fx:value="40.0" />
+                                          <Double fx:value="0.0" />
+                                          <Double fx:value="-60.0" />
+                                       </points>
+                                    </Polygon>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="78.0" layoutY="245.0" mnemonicParsing="false" onAction="#doSomething" text="Button" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
