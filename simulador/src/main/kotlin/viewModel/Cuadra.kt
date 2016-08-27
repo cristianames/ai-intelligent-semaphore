@@ -9,7 +9,7 @@ import rx.lang.kotlin.observable
  * Created by CristianErik on 21/08/2016.
  */
 
-open class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
+abstract class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
 
     var outgoingCrossingByCarsAmount = 0
     var outgoingTurningCarsAmount = 0
@@ -39,5 +39,4 @@ open class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
         outgoingCrossingByCarsAmount += leftAmount
         outgoingTurningCarsAmount += totalAmount - leftAmount
     }
-
 }
