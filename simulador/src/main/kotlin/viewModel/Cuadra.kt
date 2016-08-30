@@ -9,35 +9,21 @@ import rx.lang.kotlin.observable
  * Created by CristianErik on 21/08/2016.
  */
 
-class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
+abstract class Cuadra(private val _dataCuadra: DataCuadra) {
 
     var outgoingCrossingByCarsAmount = 0
     var outgoingTurningCarsAmount = 0
     var sendingCars: Observable<Cuadra>
 
-    private var _incomingCarsAmount: Int = 0
+    protected var _incomingCarsAmount: Int = 0
         set(value) { field = minimo(_dataCuadra.capacidad / 2, value) }
-    private val _incomingCarsAvailability: Int =  _dataCuadra.capacidad / 2 - _incomingCarsAmount
-    private val _outgoingCarsAvailability: Int = _dataCuadra.capacidad / 2 - outgoingCrossingByCarsAmount - outgoingTurningCarsAmount
+    protected val _incomingCarsAvailability: Int =  _dataCuadra.capacidad / 2 - _incomingCarsAmount
+    protected val _outgoingCarsAvailability: Int = _dataCuadra.capacidad / 2 - outgoingCrossingByCarsAmount - outgoingTurningCarsAmount
 
     private var timer: Observable<Int> =  observable { /*Do Something*/ }
 
     init {
         sendingCars = timer.doOnEach { moveCarsToTheFront() }.map { this }
-
-        entryNode. .subscribe { previousBlock ->
-            if(previousBlock.isLeft()) {
-                val block = previousBlock.left().get()
-                val amount = minimo(_incomingCarsAvailability, block.outgoingCrossingByCarsAmount)
-                _incomingCarsAmount += amount
-                block.outgoingCrossingByCarsAmount -= amount
-            } else if (previousBlock.isRight()) {
-                val block = previousBlock.right().get()
-                val amount = minimo(_incomingCarsAvailability, block.outgoingTurningCarsAmount)
-                _incomingCarsAmount += amount
-                block.outgoingTurningCarsAmount -= amount
-            }
-        }
     }
 
     private fun moveCarsToTheFront() {
@@ -53,5 +39,4 @@ class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
         outgoingCrossingByCarsAmount += leftAmount
         outgoingTurningCarsAmount += totalAmount - leftAmount
     }
-
 }
