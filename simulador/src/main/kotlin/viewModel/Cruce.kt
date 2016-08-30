@@ -29,5 +29,5 @@ class Cruce(private val _dataCruce: DataCruce,
     override val turningVerticalOutgoingCars = observable<Cuadra> { subscriber ->
         _horizontalIncomingCars.sendingCars.subscribe { subscriber.onNext(it) }
     }
-    
+
 }

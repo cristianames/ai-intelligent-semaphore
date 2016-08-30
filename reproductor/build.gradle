@@ -33,5 +33,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile project(':simulador')
 //    testCompile group: 'junit', name: 'junit', version: '4.11'
 }

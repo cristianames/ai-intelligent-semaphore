@@ -8,18 +8,25 @@ import javafx.stage.Stage
 
 class Main : Application() {
 
-    @Throws(Exception::class)
-    override fun start(primaryStage: Stage) {
-        val root = FXMLLoader.load<Parent>(javaClass.getResource("sample.fxml"))
-        primaryStage.title = "Hello World"
-        primaryStage.scene = Scene(root)
-        primaryStage.show()
-    }
-
     companion object {
         @JvmStatic fun main(args: Array<String>) {
             launch(Main::class.java)
         }
     }
+
+    @Throws(Exception::class)
+    override fun start(primaryStage: Stage) {
+        val controller = initializeView(primaryStage)
+
+    }
+
+    fun initializeView(primaryStage: Stage): Controller{
+        val root = FXMLLoader.load<Parent>(javaClass.getResource("sample.fxml"))
+        primaryStage.title = "Intelligent Semaphore"
+        primaryStage.scene = Scene(root)
+        primaryStage.show()
+        return root as Controller
+    }
+
 
 }

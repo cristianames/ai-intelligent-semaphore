@@ -25,7 +25,7 @@ class Cuadra(private val _dataCuadra: DataCuadra,  entryNode: ICruce) {
     init {
         sendingCars = timer.doOnEach { moveCarsToTheFront() }.map { this }
 
-        entryNode.horizontalOutgoingCars.subscribe { previousBlock ->
+        entryNode. .subscribe { previousBlock ->
             if(previousBlock.isLeft()) {
                 val block = previousBlock.left().get()
                 val amount = minimo(_incomingCarsAvailability, block.outgoingCrossingByCarsAmount)
