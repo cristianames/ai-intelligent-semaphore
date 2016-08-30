@@ -23,88 +23,80 @@ data class StreetMap(val x: Int, val y: Int) {
 
 class Main(streetsMap: StreetMap) {
 
-    val _semaphores: Array<Semaforo>
-    val _verticalBlocks: Array<Cuadra>
-    val _horizontalBlocks: Array<Cuadra>
-    val _entryBlocks: Array<Entrada>
-    val _exitBlocks: Array<Salida>
-    val _dataVerticalStreets: Array<DataCalle>
-    val _dataHorizontalStreets: Array<DataCalle>
+    val _semaphores: ArrayList<Semaforo>
+    val _dataVerticalStreets: ArrayList<Calle>
+    val _dataHorizontalStreets: ArrayList<Calle>
 
     init {
         _semaphores = createSemaphores(streetsMap.semaphores)
-        _entryBlocks = createEntryTerminals(streetsMap.terminalsHalfAmount)
-        _exitBlocks = createExitTerminals(streetsMap.terminalsHalfAmount)
-        _verticalBlocks = createVerticalBlocks(streetsMap.verticalBlocks)
-        _horizontalBlocks = createHorizontalBlocks(streetsMap.horizontalBlocks)
         _dataVerticalStreets = createVerticalStreets(streetsMap.x, streetsMap.y)
         _dataHorizontalStreets = createHorizontalStreets(streetsMap.x, streetsMap.y)
-
     }
 
-    private fun createSemaphores(amount: Int): Array<Semaforo> {
-        return Array(amount) { Semaforo(DataSemaforo(it)) }
-    }
-
-    private fun createEntryTerminals(amount: Int): Array<Entrada> {
-        return Array(amount) { Entrada(DataEntrada(it)) }
-    }
-
-    private fun createExitTerminals(amount: Int): Array<Salida> {
-        return Array(amount) { Salida(DataSalida(it)) }
-    }
-
-    private fun createVerticalBlocks(amount: Int): Array<Cuadra> {
-        return Array(amount) { Cuadra(DataCuadra(it, DataCalle(it), 100 ), entryNode = FindTerminalNodeByPosition(it)) }
-    }
-
-    private fun createHorizontalBlocks(amount: Int): Array<Cuadra> {
-        return Array(amount) { Cuadra(DataCuadra(it, DataCalle(it), 100 ), entryNode = FindTerminalNodeByPosition(it)) }
+    private fun createSemaphores(amount: Int): ArrayList<Semaforo> {
+        val semaphores = arrayListOf<Semaforo>()
+        for(i in 0..(amount - 1)) semaphores[i] = Semaforo(DataSemaforo(i))
+        return semaphores
     }
 
     private fun createVerticalStreets(x: Int, y: Int): ArrayList<Calle> {
-
         val streets = ArrayList<Calle>(x)
-        val blocks = ArrayList<Cuadra>(x + 1)
-        val semaphores = ArrayList<Semaforo>(x)
-        for (i in 0..x) {
+        val blocks = ArrayList<Cuadra>(y + 1)
+        for (i in 0..(x - 1)) {
             for (j in 0..y) {
-                blocks[j] = _horizontalBlocks[j * x + i]
-                _semaphores[j * x + i])
+                var entryNode: ICruce? = null
+                when(i) {
+                    0, 2, 4 -> {
+                        if(j == y) entryNode = Entrada(DataEntrada(j * x + i))
+                        else entryNode = _semaphores[j * x + i]
+                        blocks[j] = CuadraVertical(DataCuadra(i * x + j, 100), entryNode)
+                    }
+                    else -> {
+                        if(j == 0) entryNode = Entrada(DataEntrada(j * x + i))
+                        else entryNode = _semaphores[(j - 1) * x + i]
+                        blocks[j] = CuadraVertical(DataCuadra(i * x + j, 100), entryNode)
+                    }
+                }
+
             }
-            blocks[x + 1] = _horizontalBlocks[(y + 1) * x + x]
             var dataCalle: DataCalle? = null
             when(i) {
                 0,2,4 -> dataCalle = DataCalle(DataCalle.Sentido.Norte)
                 else -> dataCalle = DataCalle(DataCalle.Sentido.Sur)
             }
-            streets[i] = Calle(dataCalle, blocks, semaphores)
+            streets[i] = Calle(dataCalle, blocks)
         }
         return streets
-
     }
 
     private fun createHorizontalStreets(x: Int, y: Int): ArrayList<Calle> {
-        val streets = ArrayList<Calle>(x)
+        val streets = ArrayList<Calle>(y)
         val blocks = ArrayList<Cuadra>(x + 1)
-        val semaphores = ArrayList<Semaforo>(x)
-        for (j in 0..y) {
+        for (j in 0..(y - 1)) {
             for (i in 0..x) {
-                blocks[i] = _horizontalBlocks[j * x + i]
-                _semaphores[j * x + i])
+                var entryNode: ICruce? = null!!
+                when(j) {
+                    0, 3 -> {
+                        if(i == x) entryNode = Entrada(DataEntrada(j * x + i))
+                        else entryNode = _semaphores[j * x + i]
+                        blocks[j] = CuadraVertical(DataCuadra(i * x + j, 100), entryNode)
+                    }
+                    else -> {
+                        if(i == 0) entryNode = Entrada(DataEntrada(j * x + i))
+                        else entryNode = _semaphores[j * ( x - 1) + i]
+                        blocks[j] = CuadraVertical(DataCuadra(i * x + j, 100), entryNode)
+                    }
+                }
+
             }
-            blocks[x + 1] = _horizontalBlocks[j * x + x + 1]
             var dataCalle: DataCalle? = null
             when(j) {
                 0,3 -> dataCalle = DataCalle(DataCalle.Sentido.Oeste)
                 else -> dataCalle = DataCalle(DataCalle.Sentido.Este)
             }
-            streets[j] = Calle(dataCalle, blocks, semaphores)
+            streets[j] = Calle(dataCalle, blocks)
         }
         return streets
     }
 
-    private fun FindTerminalNodeByPosition(index: Int): ICruce {
-        return Semaforo(_dataSemaforo = DataSemaforo(index)) //Make a real calculation
-    }
 }
