@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.IntroduccionView">
+   <children>
+      <SplitPane dividerPositions="0.4" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="utnLogo" fitHeight="150.0" fitWidth="200.0" layoutX="18.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0" />
+                  <Label fx:id="utnLabel" layoutX="91.0" layoutY="221.0" text="UTN FRBA" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="90.0" />
+                  <Label fx:id="iaaLabel" layoutX="18.0" layoutY="267.0" text="INTELIGENCIA ARTIFICIAL AVANZADA" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="newButton" layoutX="78.0" layoutY="117.0" minWidth="200.0" mnemonicParsing="false" text="Nuevo" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="140.0" />
+                  <Button fx:id="loadButton" layoutX="78.0" layoutY="236.0" minWidth="200.0" mnemonicParsing="false" text="Cargar" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
