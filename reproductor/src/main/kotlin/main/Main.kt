@@ -1,10 +1,14 @@
-package visualizador
+package main
 
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.layout.AnchorPane
 import javafx.stage.Stage
+import vistas.Introduction
+
+var PrimaryStage: Stage? = null
 
 class Main : Application() {
 
@@ -16,16 +20,14 @@ class Main : Application() {
 
     @Throws(Exception::class)
     override fun start(primaryStage: Stage) {
-        val controller = initializeView(primaryStage)
+        PrimaryStage = primaryStage
 
-    }
+        val opener = {
+            Introduction.Create("UTN", "TGC", { Introduction() }, {  })
+        }
 
-    fun initializeView(primaryStage: Stage): Controller{
-        val root = FXMLLoader.load<Parent>(javaClass.getResource("sample.fxml"))
-        primaryStage.title = "Intelligent Semaphore"
-        primaryStage.scene = Scene(root)
-        primaryStage.show()
-        return root as Controller
+        val controller = Introduction.Create("UTN", "IAA", opener, {  })
+        controller.show()
     }
 
 

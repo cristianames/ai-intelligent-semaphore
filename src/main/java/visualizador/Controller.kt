@@ -1,3 +1,0 @@
-package visualizador
-
-class Controller
