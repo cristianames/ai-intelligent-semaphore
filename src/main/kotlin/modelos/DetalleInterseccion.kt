@@ -4,10 +4,10 @@ package modelos
  * Created by CristianErik on 05/11/2016.
  */
 
-class DetalleInterseccion(val cantPorSegundo: Int, val color: String) {
+data class DetalleInterseccion(val cantPorSegundo: Int, val empalmaPorDerecha: Boolean) {
 
     fun print() {
-        print("${this.javaClass.name}{ cantPorSegundo: $cantPorSegundo; color: $color }")
+        print("${this.javaClass.name}{ cantPorSegundo: $cantPorSegundo; EmpalmaPorDerecha: $empalmaPorDerecha }")
     }
 
 }

@@ -1,10 +1,11 @@
 package controladores
 
+import com.fasterxml.jackson.core.JsonFactory
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.fasterxml.jackson.module.kotlin.KotlinModule
+import modelos.DetalleCalle
 import modelos.DetalleInterseccion
-import servicios.YAMLFiltro
 import vistas.IntroduccionView
 import java.io.File
 import java.nio.file.Files
@@ -40,13 +41,13 @@ class IntroduccionController : Controller() {
 
     fun loadButtonAction() {
         val fileChooser = JFileChooser(".")
-        val filter = FileNameExtensionFilter("Archivos YAML", "yaml")
+        val filter = FileNameExtensionFilter("Archivos Json", "json")
         fileChooser.fileFilter = filter
         val status = fileChooser.showOpenDialog(null)
         // Si apretamos en aceptar ocurrirá esto
         if (status == JFileChooser.APPROVE_OPTION) {
             val selectedFile = fileChooser.selectedFile
-            if(selectedFile.isYAML()) {
+            if(selectedFile.isJson()) {
                 val interseccion = loadFromFile(selectedFile.toPath())
                 if (interseccion == null) {
                     // TODO: Deberia lanzarse un popup diciendo que no se pudo cargar el archivo
@@ -69,20 +70,20 @@ class IntroduccionController : Controller() {
 
     }
 
-    private fun loadFromFile(path: Path): DetalleInterseccion? {
-        val mapper = ObjectMapper(YAMLFactory()) // Enable YAML parsing
+    private fun loadFromFile(path: Path): DetalleCalle? {
+        val mapper = ObjectMapper(JsonFactory()) // Enable Json parsing
         mapper.registerModule(KotlinModule()) // Enable Kotlin support
 
         return Files.newBufferedReader(path).use {
-            mapper.readValue(it, DetalleInterseccion::class.java)
+            mapper.readValue(it, DetalleCalle::class.java)
         }
     }
 
 }
 
-private fun File.isYAML(): Boolean {
+private fun File.isJson(): Boolean {
     val i = name.lastIndexOf('.')
     val extension = name.substring(i + 1).toLowerCase()
-    return extension == "yaml"
+    return extension == "json"
 }
 
