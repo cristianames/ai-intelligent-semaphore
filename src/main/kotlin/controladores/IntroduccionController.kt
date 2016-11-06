@@ -5,12 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import modelos.DetalleCalle
-import modelos.DetalleInterseccion
+import servicios.CorridasServicio
 import vistas.IntroduccionView
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import javax.swing.JFileChooser
+import javax.swing.JOptionPane
 import javax.swing.filechooser.FileNameExtensionFilter
 
 /**
@@ -47,23 +48,29 @@ class IntroduccionController : Controller() {
         // Si apretamos en aceptar ocurrirá esto
         if (status == JFileChooser.APPROVE_OPTION) {
             val selectedFile = fileChooser.selectedFile
-            if(selectedFile.isJson()) {
-                val interseccion = loadFromFile(selectedFile.toPath())
-                if (interseccion == null) {
-                    // TODO: Deberia lanzarse un popup diciendo que no se pudo cargar el archivo
-                    print("SOY UN POPUP")
-                } else {
-                    interseccion.print()
-                }
-
+            if(!selectedFile.isJson()) {
+                JOptionPane.showMessageDialog (null, "No se selecciono un archivo Json valido",
+                        "Error al cargar archivo",
+                        JOptionPane.ERROR_MESSAGE)
+                return
             } else {
-                // TODO: Deberia lanzarse un popup diciendo que se selecciono un archivo invalido
-                print("SOY UN POPUP")
+                val datos = loadFromFile(selectedFile.toPath())
+                if (datos == null) {
+                    JOptionPane.showMessageDialog(null, "No se pudo cargar el archivo",
+                            "Error al cargar archivo",
+                            JOptionPane.ERROR_MESSAGE)
+                    return
+                }
+                // Caso feliz
+                if (JOptionPane.showConfirmDialog(null,
+                        "Se cargo el archivo con exito. Ahora se procedera con las corridas",
+                        "Carga finalizada",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE) == 0) {
+                   val servicio = CorridasServicio(datos)
+                    print(servicio.correrAlgoritmo(20))
+                }
             }
-
-            // Si apretamos en cancelar o cerramos la ventana ocurrirá esto
-        } else if (status == JFileChooser.CANCEL_OPTION) {
-            println("Cancelar")
         }
 
 
